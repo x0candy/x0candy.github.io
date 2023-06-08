@@ -224,6 +224,60 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/05/31/sqli-labs/sqli-labs-13/" target="_self">
+          sqli-labs-13
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/31/sqli-labs/sqli-labs-13/" target="_self">
+        <div>
+          sqli-labs第13题首先确定闭合符号，单引号报错，查看报错信息，闭合符号应该是’） 然后构造永真条件，登陆成功。 继续注入发现没有回显， 理一下思路： 1.闭合符号为‘） 2.永真条件登陆成功，证明可以注入。 3.没有回显位 根据以上条件，可以想到布尔盲注，构造条件，根据是否登陆成功来验证数据是否正确 构造payload： 1’) or (ascii(substr(database(),1,
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-05-31 11:43" pubdate>
+              2023-05-31
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/05/31/sqli-labs/sqli-labs-12/" target="_self">
           sqli-labs-12
         </a>
@@ -673,60 +727,6 @@
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
             <time datetime="2023-05-15 11:08" pubdate>
-              2023-05-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/15/sqli-labs/sqli-labs-3/" target="_self">
-          sqli-labs-3
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/15/sqli-labs/sqli-labs-3/" target="_self">
-        <div>
-          sqli-labs第三题按正常操作走，我先判断了注入类型，是字符型注入。 然后我用order by猜列数的时候，下意识的以为是’闭合，搞了会儿一直报错 最后才发现是‘） 注意闭合符号 然后就好办了，按流程走就行 1.order by猜列数 2.union select 1，2，3判断回显位置 3.**union select 1,group_concat(table_name),3 from in
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-15 10:11" pubdate>
               2023-05-15
             </time>
           </div>

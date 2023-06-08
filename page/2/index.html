@@ -224,6 +224,60 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/06/03/sqli-labs/sqli-labs-22/" target="_self">
+          sqli-labs-22
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/03/sqli-labs/sqli-labs-22/" target="_self">
+        <div>
+          sqli-labs第22题看题目还是cookie注入，bp拦截看数据包，和21题一样的进行了base64编码， 加单引号无屌用，双引号试一试，果然，只是换了闭合符号。 照着21题做就行，闭合符号换成双引号。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-03 11:20" pubdate>
+              2023-06-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/06/03/sqli-labs/sqli-labs-21/" target="_self">
           sqli-labs-21
         </a>
@@ -673,60 +727,6 @@
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
             <time datetime="2023-05-31 13:34" pubdate>
-              2023-05-31
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/31/sqli-labs/sqli-labs-13/" target="_self">
-          sqli-labs-13
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/31/sqli-labs/sqli-labs-13/" target="_self">
-        <div>
-          sqli-labs第13题首先确定闭合符号，单引号报错，查看报错信息，闭合符号应该是’） 然后构造永真条件，登陆成功。 继续注入发现没有回显， 理一下思路： 1.闭合符号为‘） 2.永真条件登陆成功，证明可以注入。 3.没有回显位 根据以上条件，可以想到布尔盲注，构造条件，根据是否登陆成功来验证数据是否正确 构造payload： 1’) or (ascii(substr(database(),1,
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-31 11:43" pubdate>
               2023-05-31
             </time>
           </div>
