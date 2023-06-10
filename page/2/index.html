@@ -224,6 +224,60 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/06/03/sqli-labs/sqli-labs-23/" target="_self">
+          sqli-labs-23
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/03/sqli-labs/sqli-labs-23/" target="_self">
+        <div>
+          sqli-labs第23题老样子，?id&#x3D;1’ 测试报错，然后注的时候发现过滤了注释符，导致sql语句不能闭合， 还好之前了解过一些waf的绕过，过滤了注释符，我直接再整个单引号，凑成对儿就行了， mysql里面不管单引号里有没有内容只要单引号是成对的，就没啥问题 然后直接构造payload:?id&#x3D;1’ union select 1,2,3’ 最简单的注入，直接干
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-03 15:29" pubdate>
+              2023-06-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/06/03/sqli-labs/sqli-labs-22/" target="_self">
           sqli-labs-22
         </a>
@@ -674,60 +728,6 @@
             <i class="iconfont icon-date"></i>
             <time datetime="2023-06-01 11:34" pubdate>
               2023-06-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/31/sqli-labs/sqli-labs-14/" target="_self">
-          sqli-labs-14
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/31/sqli-labs/sqli-labs-14/" target="_self">
-        <div>
-          sqli-labs第14题和13题一样的类型，闭合符号换成“ 按照13题的题解做就行了 另外，看了下15题，发现还是布尔盲注，有点疑惑，怎么一连串题都是布尔盲注 然后看了下题解，发现13，14主要考报错注入。下面讲一下报错注入的题解。 1.报错注入核心：updatexml() 原理：MySQL提供了一个updatexml()函数，当第2个参数包含特殊符号时会报错，并将第二个参数的内容显示在报错信息
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-31 13:34" pubdate>
-              2023-05-31
             </time>
           </div>
         

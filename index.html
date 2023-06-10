@@ -224,6 +224,60 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/06/09/sqli-labs/sqli-labs-28a/" target="_self">
+          sqli-labs-28a
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/09/sqli-labs/sqli-labs-28a/" target="_self">
+        <div>
+          sqli-labs第28a题这题感觉是28题的简化版本，看源码只过滤了’&#x2F;union\s+select&#x2F;i’ 那这还有什么说的？，直接28题的payload改都不改拿来用就行
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-09 10:35" pubdate>
+              2023-06-09
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/06/08/sqli-labs/sqli-labs-26a/" target="_self">
           sqli-labs-26a
         </a>
@@ -279,14 +333,14 @@
       <h1 class="index-header">
         
         <a href="/2023/06/06/sqli-labs/sqli-labs-29/" target="_self">
-          
+          sqli-labs-29
         </a>
       </h1>
 
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/06/06/sqli-labs/sqli-labs-29/" target="_self">
         <div>
-          
+          sqli-labs第29题这题鬼扯得很，说是有waf，一试，这不啥也没过滤吗？你这waf有啥用？ 一看源码才知道，有三个页面，一个index.php，啥也没过滤 login.php才有waf，还有个hacked.php就是显示的拦截页面 这一关的知识点：http参数污染，简称hpp 原理：浏览器和服务器交互的时候，浏览器一般会在get&#x2F;post请求中带上键值对形式的参数，一般同一个名称的
         </div>
       </a>
 
@@ -299,6 +353,27 @@
             </time>
           </div>
         
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
         
         
       </div>
@@ -319,7 +394,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/06/06/sqli-labs/sqli-labs-28/" target="_self">
         <div>
-          sqli-labs第28题第28题试了半天，先是单引号报错，俩单引号正常，判断闭合符号为单引号，后面发现不对，看了源码才知道闭合符号是‘） 第二，过滤绕了半天都绕不过，我看着源码绕都不行，结果我把sql语句cmd执行了下，是可以的，最后才发现是%a0不行，
+          sqli-labs第28题第28题试了半天，先是单引号报错，俩单引号正常，判断闭合符号为单引号，后面发现不对，看了源码才知道闭合符号是‘） 第二，过滤绕了半天都绕不过，我看着源码绕都不行，结果我把sql语句cmd执行了下，是可以的，最后才发现是%a0不行， 大小写可以绕过，直接按照26a题的步骤做就行了
         </div>
       </a>
 
@@ -652,60 +727,6 @@
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
             <time datetime="2023-06-03 20:16" pubdate>
-              2023-06-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/03/sqli-labs/sqli-labs-23/" target="_self">
-          sqli-labs-23
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/03/sqli-labs/sqli-labs-23/" target="_self">
-        <div>
-          sqli-labs第23题老样子，?id&#x3D;1’ 测试报错，然后注的时候发现过滤了注释符，导致sql语句不能闭合， 还好之前了解过一些waf的绕过，过滤了注释符，我直接再整个单引号，凑成对儿就行了， mysql里面不管单引号里有没有内容只要单引号是成对的，就没啥问题 然后直接构造payload:?id&#x3D;1’ union select 1,2,3’ 最简单的注入，直接干
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-03 15:29" pubdate>
               2023-06-03
             </time>
           </div>
