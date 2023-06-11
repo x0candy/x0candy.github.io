@@ -16,21 +16,21 @@
   <meta name="author" content="x0candy">
   <meta name="keywords" content="">
   
-    <meta name="description" content="sqli-labs第28a题这题感觉是28题的简化版本，看源码只过滤了’&#x2F;union\s+select&#x2F;i’ 那这还有什么说的？，直接28题的payload改都不改拿来用就行">
+    <meta name="description" content="sqli-labs第32题新知识点，宽字节注入。 宽字节注入原理： 1.首先，需要了解，php发送请求到mysql数据库的时候，字符集使用character_set_client设置的值进行了一次编码，当设置值为gbk时，会导致一个编码转换的问题，这就是宽字节注入 2.mysql在使用gbk编码的时候（gbk是宽字节之一，就是两个字节及以上的编码），会认为两个字符就是一个汉字，前一个ascii码要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sqli-labs-28a">
-<meta property="og:url" content="http://example.com/2023/06/09/sqli-labs/sqli-labs-28a/index.html">
+<meta property="og:title" content="sqli-labs-32">
+<meta property="og:url" content="http://example.com/2023/06/11/sqli-labs/sqli-labs-32/index.html">
 <meta property="og:site_name" content="x0candy">
-<meta property="og:description" content="sqli-labs第28a题这题感觉是28题的简化版本，看源码只过滤了’&#x2F;union\s+select&#x2F;i’ 那这还有什么说的？，直接28题的payload改都不改拿来用就行">
+<meta property="og:description" content="sqli-labs第32题新知识点，宽字节注入。 宽字节注入原理： 1.首先，需要了解，php发送请求到mysql数据库的时候，字符集使用character_set_client设置的值进行了一次编码，当设置值为gbk时，会导致一个编码转换的问题，这就是宽字节注入 2.mysql在使用gbk编码的时候（gbk是宽字节之一，就是两个字节及以上的编码），会认为两个字符就是一个汉字，前一个ascii码要">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-09T02:35:26.137Z">
-<meta property="article:modified_time" content="2023-06-09T02:43:40.835Z">
+<meta property="article:published_time" content="2023-06-11T11:46:00.733Z">
+<meta property="article:modified_time" content="2023-06-11T11:59:23.488Z">
 <meta property="article:author" content="x0candy">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>sqli-labs-28a - x0candy</title>
+  <title>sqli-labs-32 - x0candy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="sqli-labs-28a"></span>
+            <span id="subtitle" data-typed-text="sqli-labs-32"></span>
           
         </div>
 
@@ -207,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-06-09 10:35" pubdate>
-          2023年6月9日 上午
+        <time datetime="2023-06-11 19:46" pubdate>
+          2023年6月11日 晚上
         </time>
       </span>
     
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          96 字
+          468 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -268,13 +268,19 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">sqli-labs-28a</h1>
+            <h1 style="display: none">sqli-labs-32</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="sqli-labs第28a题"><a href="#sqli-labs第28a题" class="headerlink" title="sqli-labs第28a题"></a>sqli-labs第28a题</h1><p>这题感觉是28题的简化版本，看源码只过滤了’&#x2F;union\s+select&#x2F;i’</p>
-<p>那这还有什么说的？，直接28题的payload改都不改拿来用就行</p>
+                <h1 id="sqli-labs第32题"><a href="#sqli-labs第32题" class="headerlink" title="sqli-labs第32题"></a>sqli-labs第32题</h1><p>新知识点，宽字节注入。</p>
+<p><strong>宽字节注入原理：</strong></p>
+<p><strong>1.首先，需要了解，php发送请求到mysql数据库的时候，字符集使用character_set_client设置的值进行了一次编码，当设置值为gbk时，会导致一个编码转换的问题，这就是宽字节注入</strong></p>
+<p><strong>2.mysql在使用gbk编码的时候（gbk是宽字节之一，就是两个字节及以上的编码），会认为两个字符就是一个汉字，前一个ascii码要大于128才是汉字范围</strong></p>
+<p><strong>3.后端开发时，经常会使用反斜杠将单双引号进行转义，以此来达到防止sql注入的目的，这时候，如果数据库是使用的gbk编码，那么我们就可以增加字符，以此达到当数据库进行编码转换的时候，我们增加的字符可以和反斜杠的编码合并成一个汉字编码。这样反斜杠就被吃掉了，自然转义就消失了，可以注入了</strong></p>
+<p>本题就是宽字节注入，根据上述原理，我们可以构造payload：**?id&#x3D;0%df’ union select 1,2,3%23**</p>
+<p>%df和反斜杠的编码%5c组合形成一个汉字字符（繁体字’连‘好像是）</p>
+<p>然后就没啥说的了，直接注入就行。</p>
 
                 
               </div>
@@ -313,8 +319,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>sqli-labs-28a</div>
-      <div>http://example.com/2023/06/09/sqli-labs/sqli-labs-28a/</div>
+      <div>sqli-labs-32</div>
+      <div>http://example.com/2023/06/11/sqli-labs/sqli-labs-32/</div>
     </div>
     <div class="license-meta">
       
@@ -326,7 +332,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年6月9日</div>
+          <div>2023年6月11日</div>
         </div>
       
       
@@ -358,18 +364,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/11/sqli-labs/sqli-labs-30/" title="sqli-labs-30">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">sqli-labs-30</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/06/08/sqli-labs/sqli-labs-26a/" title="sqli-labs-26a">
-                        <span class="hidden-mobile">sqli-labs-26a</span>
+                      <a href="/2023/06/11/sqli-labs/sqli-labs-31/" title="sqli-labs-31">
+                        <span class="hidden-mobile">sqli-labs-31</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

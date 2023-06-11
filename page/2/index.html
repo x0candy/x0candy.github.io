@@ -224,6 +224,168 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/06/05/sqli-labs/sqli-labs-25a/" target="_self">
+          sqli-labs-25a
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/05/sqli-labs/sqli-labs-25a/" target="_self">
+        <div>
+          sqli-labs第25a题这个题和25题是一样的，只是注入类型不一样，25题是字符型注入，这个题是数字型注入。 判断注入类型时要用到and，双写一样的可以绕过。 按照25题的题解做就行了，改成数字型注入。 另外， 25题留下的疑惑，今天了解了一下， 在url中**#**可能会被当成html的锚点，不会被传输到后端，用url编码%23则不会被理解成锚点 试了下确实是这样。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-05 22:37" pubdate>
+              2023-06-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/04/sqli-labs/sqli-labs-25/" target="_self">
+          sqli-labs-25
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/04/sqli-labs/sqli-labs-25/" target="_self">
+        <div>
+          sqli-labs第25题这一关主要考察waf绕过，过滤了and和or 测试一波，双写可以绕过，证明之过滤了一次，例如oorr，waf检查到or，替换为空后，剩下的又组成了or， 双写，按照正常注入流程来就行了 留下一个疑惑，我用#注释不管用，报语句错误，用–+又管用，关键它又没过滤#号，很奇怪 有空再研究研究。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-04 10:03" pubdate>
+              2023-06-04
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/03/sqli-labs/sqli-labs-24/" target="_self">
+          sqli-labs-24
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/03/sqli-labs/sqli-labs-24/" target="_self">
+        <div>
+          sqli-labs第24题sql注入的一种类型，叫二次注入 二次注入原理二次注入和常规的sql注入不同，常规注入都是立刻就能有反馈的，比如报错注入的报错信息，延时注入的延时 二次注入的原理是，像数据库中插入恶意数据，利用该恶意数据来更改其他正常数据的信息。 例如：账号注册场景 我们注册一个账号叫做admin’# 然后登陆该账户进行修改密码操作，那么你们能想到什么？ update users set
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-03 20:16" pubdate>
+              2023-06-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/06/03/sqli-labs/sqli-labs-23/" target="_self">
           sqli-labs-23
         </a>
@@ -566,168 +728,6 @@
             <i class="iconfont icon-date"></i>
             <time datetime="2023-06-02 12:01" pubdate>
               2023-06-02
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/01/sqli-labs/sqli-labs-17/" target="_self">
-          sqli-labs-17
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/01/sqli-labs/sqli-labs-17/" target="_self">
-        <div>
-          sqli-labs第17题打开一看，基于更新的报错注入。 没见过这种类型哎。 先测试注入点，输入账号1，密码1’ 返回silly hacker，各种测试就是不行 仔细看场景，这是一个更新密码的场景， 猜测其逻辑应该是根据输入的用户名，在数据库中查找，找不到就会返回silly hacker 更新密码肯定是要正确的用户名的 然后测试admin，发现返回success，验证了猜想 然后用bp爆破了一下，
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-01 15:53" pubdate>
-              2023-06-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/01/sqli-labs/sqli-labs-16/" target="_self">
-          
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/01/sqli-labs/sqli-labs-16/" target="_self">
-        <div>
-          sqli-labs第16题16题和15题一样的，闭合符号改为”) 按照15题的题解做就行了
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-01 11:56" pubdate>
-              2023-06-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/01/sqli-labs/sqli-labs-15/" target="_self">
-          sqli-labs-15
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/01/sqli-labs/sqli-labs-15/" target="_self">
-        <div>
-          sqli-labs第15题第15题就是真的考布尔盲注了 直接按照盲注的步骤走就行了 payload:1’ or 1&#x3D;1# 修改后面的1&#x3D;1语句，根据是否登陆成功来确定or 后面的语句是否为真 直接1’ or ascii(substr(database(),1,1))&gt;100#
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-01 11:34" pubdate>
-              2023-06-01
             </time>
           </div>
         
