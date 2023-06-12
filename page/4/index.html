@@ -224,6 +224,168 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/05/30/sqli-labs/sqli-labs-10/" target="_self">
+          sqli-labs-10
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/30/sqli-labs/sqli-labs-10/" target="_self">
+        <div>
+          sqli-labs第10题第10题和第9题一样的，都是延时盲注，只不过闭合符号换成了双引号 按照第9题的题解，改一下闭合符号即可
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-05-30 10:39" pubdate>
+              2023-05-30
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/05/24/sqli-labs/sqli-labs-9/" target="_self">
+          sqli-labs-9
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/24/sqli-labs/sqli-labs-9/" target="_self">
+        <div>
+          sqli-labs第9题开始试了半天，发现只有一个返回页面，you are in………… 看了题目名字才知道，这是延时注入 延时注入主要是利用**if(exp1,exp2,exp3)，和sleep(n)**函数 if的exp1如果为真则返回exp2，为假就返回exp3 构造payload测试注入点：**?id&#x3D;1’ and sleep(5)–+** 发现有明显延迟，存在延时注入 猜库名长
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-05-24 13:48" pubdate>
+              2023-05-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/05/22/sqli-labs/sqli-labs-8/" target="_self">
+          sqli-labs-8
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/22/sqli-labs/sqli-labs-8/" target="_self">
+        <div>
+          sqli-labs第8题直接盲注。 1’ and ascii(substr(database(),1,1))&gt;70 详情查看第五题题解
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-05-22 17:34" pubdate>
+              2023-05-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/05/22/sqli-labs/sqli-labs-7/" target="_self">
           sqli-labs-7
         </a>
@@ -596,152 +758,11 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/12/SQL%E6%B3%A8%E5%85%A5%E8%AF%A6%E8%A7%A3/" target="_self">
-          SQL注入详解
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/12/SQL%E6%B3%A8%E5%85%A5%E8%AF%A6%E8%A7%A3/" target="_self">
-        <div>
-          SQL注入详解1.注入类型判断1). 数字型注入数字型注入判断方法and 1&#x3D;1和and 1&#x3D;2 如果1&#x3D;1正常显示，1&#x3D;2无返回证明是数字型 2). 字符型注入字符型注入判断方法 and ‘1’&#x3D;‘1和and ’1‘&#x3D;‘2 如果1&#x3D;1显示正常，1&#x3D;2无返回证明是字符型 主要就是通过构造sql语句逻辑为真和假看是否有返
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-12 15:21" pubdate>
-              2023-05-12
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86/" class="category-chain-item">漏洞原理</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/09/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86/" target="_self">
-          SQL注入漏洞原理
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/09/SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86/" target="_self">
-        <div>
-          SQL注入原理简介sql注入简单来说就是对用户输入的数据没有判断或者过滤，导致攻击者在前台输入的恶意sql语句成功执行了。 以此达到欺骗数据库服务器执行非授权任意查询，从而进一步获取相应的数据。 SQL注入分类以及注入思路1. 报错型   2. 盲注1. 布尔型  2.时间型  3.绕过思路  引用图片如有侵权，前联系本人删除。
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-09 10:16" pubdate>
-              2023-05-09
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%8E%9F%E7%90%86/" class="category-chain-item">漏洞原理</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/08/first/" target="_self">
-          第一篇文章
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/08/first/" target="_self">
-        <div>
-          记录信安学习之路
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-08 23:00" pubdate>
-              2023-05-08
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/3/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="page-number current">4</span>
+      <a class="extend prev" rel="prev" href="/page/3/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/#board">5</a><a class="extend next" rel="next" href="/page/5/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 

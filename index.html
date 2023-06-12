@@ -224,6 +224,168 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/06/12/sqli-labs/sqli-labs-35/" target="_self">
+          sqli-labs-35
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/12/sqli-labs/sqli-labs-35/" target="_self">
+        <div>
+          sqli-labs第35题这题走入了误区，一开始惯性思维，认为这题也是宽字节注入， 或许这题的意义就在于让我们不要惯性思维？毕竟题目都是why care for addslashs() 审阅了源码才发现，可以直接注入，数字型注入 直接注就行 payload:?id&#x3D;0%20union%20select%201,database(),3%23#&#x2F;
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-12 23:36" pubdate>
+              2023-06-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/12/sqli-labs/sqli-labs-34/" target="_self">
+          sqli-labs-34
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/12/sqli-labs/sqli-labs-34/" target="_self">
+        <div>
+          sqli-labs第34题前面是基于get的宽字节注入，这题是基于post的宽字节注入 没啥太大的区别，用bp拦截一下，照常注入即可。 payload:uname&#x3D;1&amp;passwd&#x3D;1%df’ and updatexml(1,0x7e,3)%23&amp;submit&#x3D;Submit
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-12 23:23" pubdate>
+              2023-06-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/12/sqli-labs/sqli-labs-33/" target="_self">
+          sqli-labs-33
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/12/sqli-labs/sqli-labs-33/" target="_self">
+        <div>
+          sqli-labs第33题和第32题没啥区别，第32题是自定义的过滤器，第33题是用的自带的函数。 一样的注入方式
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-12 23:12" pubdate>
+              2023-06-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/06/11/sqli-labs/sqli-labs-32/" target="_self">
           sqli-labs-32
         </a>
@@ -596,173 +758,11 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/06/sqli-labs/sqli-labs-27a/" target="_self">
-          sqli-labs-27a
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/06/sqli-labs/sqli-labs-27a/" target="_self">
-        <div>
-          sqli-labs第27a题没啥不一样，就闭合符号换了，变成了双引号 大小写绕过，按照27题的步骤注入就行。
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-06 12:29" pubdate>
-              2023-06-06
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/06/sqli-labs/sqli-labs-27/" target="_self">
-          sqli-labs-27
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/06/sqli-labs/sqli-labs-27/" target="_self">
-        <div>
-          sqli-labs第27题这下好了，连union，select都过滤了，不过双写还是可以绕过，正常注就行 然后注的时候发现了双写select不行，看了源码，发现它正则用了&#x2F;m，这个会匹配换行符两端的潜在匹配 然后试了下大小写绕过，成功了，直接注就行了
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-06 10:48" pubdate>
-              2023-06-06
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/05/sqli-labs/sqli-labs-26/" target="_self">
-          sqli-labs-26
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/05/sqli-labs/sqli-labs-26/" target="_self">
-        <div>
-          sqli-labs第26题看提示，过滤了空格和注释，nnd，试了半天都不行 空格过滤绕过： 1.&#x2F;**&#x2F; 2.（） 3.回车（url编码为%0a） 4.tab键%09 5.俩空格 6.空格%a0，新的一页%0c，return功能%0d 这个题过滤了一大堆，正常注入还是算了，直接用报错注入吧，因为报错注入用不到注释符和其他的 下面列一个常用的报错注入payload，比较好用 ?i
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-05 23:35" pubdate>
-              2023-06-05
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#board">5</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
