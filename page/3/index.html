@@ -224,6 +224,168 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/06/03/sqli-labs/sqli-labs-23/" target="_self">
+          sqli-labs-23
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/03/sqli-labs/sqli-labs-23/" target="_self">
+        <div>
+          sqli-labs第23题老样子，?id&#x3D;1’ 测试报错，然后注的时候发现过滤了注释符，导致sql语句不能闭合， 还好之前了解过一些waf的绕过，过滤了注释符，我直接再整个单引号，凑成对儿就行了， mysql里面不管单引号里有没有内容只要单引号是成对的，就没啥问题 然后直接构造payload:?id&#x3D;1’ union select 1,2,3’ 最简单的注入，直接干
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-03 15:29" pubdate>
+              2023-06-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/03/sqli-labs/sqli-labs-22/" target="_self">
+          sqli-labs-22
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/03/sqli-labs/sqli-labs-22/" target="_self">
+        <div>
+          sqli-labs第22题看题目还是cookie注入，bp拦截看数据包，和21题一样的进行了base64编码， 加单引号无屌用，双引号试一试，果然，只是换了闭合符号。 照着21题做就行，闭合符号换成双引号。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-03 11:20" pubdate>
+              2023-06-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/03/sqli-labs/sqli-labs-21/" target="_self">
+          sqli-labs-21
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/03/sqli-labs/sqli-labs-21/" target="_self">
+        <div>
+          sqli-labs第21题第21题还是cookie注入，它与第20题的区别在于，20题的cookie没有进行编码，这在实际中基本不可能 21题的cookie进行了编码，bp拦截到的cookie为:YWRtaW4%3D 先看到**%3D**,一看就是url编码，转换出来就是&#x3D;号，正确的cookie编码：YWRtaW4&#x3D; 每种编码都有自己的特征，见多了基本一眼就能判断出是什么类型的
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-03 11:12" pubdate>
+              2023-06-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/06/02/%E5%AE%9E%E6%88%98/%E5%AE%9E%E6%88%98%E6%9F%90%E6%9C%BA%E6%A2%B0%E5%85%AC%E5%8F%B8%E7%9A%84%E6%8C%96%E6%B4%9E%E4%B9%8B%E6%97%85/" target="_self">
           某机械公司的一次挖洞之旅
         </a>
@@ -566,168 +728,6 @@
             <i class="iconfont icon-date"></i>
             <time datetime="2023-06-01 11:34" pubdate>
               2023-06-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/31/sqli-labs/sqli-labs-14/" target="_self">
-          sqli-labs-14
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/31/sqli-labs/sqli-labs-14/" target="_self">
-        <div>
-          sqli-labs第14题和13题一样的类型，闭合符号换成“ 按照13题的题解做就行了 另外，看了下15题，发现还是布尔盲注，有点疑惑，怎么一连串题都是布尔盲注 然后看了下题解，发现13，14主要考报错注入。下面讲一下报错注入的题解。 1.报错注入核心：updatexml() 原理：MySQL提供了一个updatexml()函数，当第2个参数包含特殊符号时会报错，并将第二个参数的内容显示在报错信息
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-31 13:34" pubdate>
-              2023-05-31
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/31/sqli-labs/sqli-labs-13/" target="_self">
-          sqli-labs-13
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/31/sqli-labs/sqli-labs-13/" target="_self">
-        <div>
-          sqli-labs第13题首先确定闭合符号，单引号报错，查看报错信息，闭合符号应该是’） 然后构造永真条件，登陆成功。 继续注入发现没有回显， 理一下思路： 1.闭合符号为‘） 2.永真条件登陆成功，证明可以注入。 3.没有回显位 根据以上条件，可以想到布尔盲注，构造条件，根据是否登陆成功来验证数据是否正确 构造payload： 1’) or (ascii(substr(database(),1,
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-31 11:43" pubdate>
-              2023-05-31
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/31/sqli-labs/sqli-labs-12/" target="_self">
-          sqli-labs-12
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/31/sqli-labs/sqli-labs-12/" target="_self">
-        <div>
-          sqli-labs第12题和第11题一样的，换了闭合符号而已，直接‘查看报错信息，确定闭合符号为“) 然后和11题一样的步骤， 直接bp拦截包 构造payload:passwd&#x3D;1”) union select group_concat(table_name),2 from information_schema.tables where table_schema&#x3D;databas
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-31 10:58" pubdate>
-              2023-05-31
             </time>
           </div>
         
