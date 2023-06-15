@@ -224,6 +224,276 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/06/02/sqli-labs/sqli-labs-19/" target="_self">
+          sqli-labs-19
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/02/sqli-labs/sqli-labs-19/" target="_self">
+        <div>
+          sqli-labs第19题19题和18题类似，只不过是从user-agent换成了referer 按照18题的步骤做就行。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-02 17:48" pubdate>
+              2023-06-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/02/sqli-labs/sqli-labs-18/" target="_self">
+          sqli-labs-18
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/02/sqli-labs/sqli-labs-18/" target="_self">
+        <div>
+          sqli-labs第18题这题是看了题解的，开始试了一会儿，都不行，看了源码， 发现账号密码都做了检查，应该是没法注入了 后面看到一条insert的sql语句，这应该就是破局点 后面响应头各种加单引号，没用。 看了题解才知道，要账号密码正确才能执行insert语句，源码看得还是不够仔细 源码里面响应头就获取了user-agent，而ip的获取使用了remote_addr，它可以直接获取tcp协议数
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-02 12:01" pubdate>
+              2023-06-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/01/sqli-labs/sqli-labs-17/" target="_self">
+          sqli-labs-17
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/01/sqli-labs/sqli-labs-17/" target="_self">
+        <div>
+          sqli-labs第17题打开一看，基于更新的报错注入。 没见过这种类型哎。 先测试注入点，输入账号1，密码1’ 返回silly hacker，各种测试就是不行 仔细看场景，这是一个更新密码的场景， 猜测其逻辑应该是根据输入的用户名，在数据库中查找，找不到就会返回silly hacker 更新密码肯定是要正确的用户名的 然后测试admin，发现返回success，验证了猜想 然后用bp爆破了一下，
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-01 15:53" pubdate>
+              2023-06-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/01/sqli-labs/sqli-labs-16/" target="_self">
+          
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/01/sqli-labs/sqli-labs-16/" target="_self">
+        <div>
+          sqli-labs第16题16题和15题一样的，闭合符号改为”) 按照15题的题解做就行了
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-01 11:56" pubdate>
+              2023-06-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/01/sqli-labs/sqli-labs-15/" target="_self">
+          sqli-labs-15
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/01/sqli-labs/sqli-labs-15/" target="_self">
+        <div>
+          sqli-labs第15题第15题就是真的考布尔盲注了 直接按照盲注的步骤走就行了 payload:1’ or 1&#x3D;1# 修改后面的1&#x3D;1语句，根据是否登陆成功来确定or 后面的语句是否为真 直接1’ or ascii(substr(database(),1,1))&gt;100#
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-01 11:34" pubdate>
+              2023-06-01
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/05/31/sqli-labs/sqli-labs-14/" target="_self">
           sqli-labs-14
         </a>
@@ -488,281 +758,11 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/24/sqli-labs/sqli-labs-9/" target="_self">
-          sqli-labs-9
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/24/sqli-labs/sqli-labs-9/" target="_self">
-        <div>
-          sqli-labs第9题开始试了半天，发现只有一个返回页面，you are in………… 看了题目名字才知道，这是延时注入 延时注入主要是利用**if(exp1,exp2,exp3)，和sleep(n)**函数 if的exp1如果为真则返回exp2，为假就返回exp3 构造payload测试注入点：**?id&#x3D;1’ and sleep(5)–+** 发现有明显延迟，存在延时注入 猜库名长
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-24 13:48" pubdate>
-              2023-05-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/22/sqli-labs/sqli-labs-8/" target="_self">
-          sqli-labs-8
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/22/sqli-labs/sqli-labs-8/" target="_self">
-        <div>
-          sqli-labs第8题直接盲注。 1’ and ascii(substr(database(),1,1))&gt;70 详情查看第五题题解
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-22 17:34" pubdate>
-              2023-05-22
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/22/sqli-labs/sqli-labs-7/" target="_self">
-          sqli-labs-7
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/22/sqli-labs/sqli-labs-7/" target="_self">
-        <div>
-          sqli-labs第7题这题有点鬼扯，刚开始正常走流程，发现不知道sql语句闭合符号 最后别人的wp才知道，是**’))**闭合 正常盲注即可解题 另一种方法就是题目提示的outfile 使用该方法的条件，1.有写入权限。2.知道网站在服务器的绝对路径 使用outfile写入一句话木马，然后远程连接 payload:?id&#x3D;1’)) union select 1,2,’‘ into ou
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-22 12:15" pubdate>
-              2023-05-22
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/15/sqli-labs/sqli-labs-6/" target="_self">
-          sqli-labs-6
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/15/sqli-labs/sqli-labs-6/" target="_self">
-        <div>
-          sqli-labs第六题第六题和第五题类似，只是闭合符号换成了双引号 用\测试，然后报错了，查看报错信息，注意到闭合符号是双引号
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-15 13:43" pubdate>
-              2023-05-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/15/sqli-labs/sqli-labs-5/" target="_self">
-          sqli-labs-5
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/15/sqli-labs/sqli-labs-5/" target="_self">
-        <div>
-          sqli-labs第五题第五题看着像盲注了，试了一下，果然是布尔盲注 先猜数据库名的长度，主要函数length() 构造payload：**?id&#x3D;1’ and length(database())&#x3D;1**,看是否有回显，测试到8的时候有回显，证明数据库名的长度是8 主要用到的函数substr(str,index,length),ascii() substr函数主要是截取字符串
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-15 11:12" pubdate>
-              2023-05-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/3/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/#board">5</a><a class="extend next" rel="next" href="/page/5/#board"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/page/3/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/#board">5</a><a class="page-number" href="/page/6/#board">6</a><a class="extend next" rel="next" href="/page/5/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
