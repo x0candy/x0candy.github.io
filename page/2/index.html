@@ -224,6 +224,114 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/06/14/sqli-labs/sqli-labs-37/" target="_self">
+          sqli-labs-37
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/14/sqli-labs/sqli-labs-37/" target="_self">
+        <div>
+          sqli-labs第37题和36题一样的，只不过换成了post类型，直接宽字节+报错注入，干碎他 payload:uname&#x3D;1&amp;passwd&#x3D;1%df’ and updatexml(1,0x7e,3)%23&amp;submit&#x3D;Submit
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-14 13:46" pubdate>
+              2023-06-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/13/sqli-labs/sqli-labs-36/" target="_self">
+          sqli-labs-36
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/13/sqli-labs/sqli-labs-36/" target="_self">
+        <div>
+          sqli-labs第36题用宽字节注入即可，没看源码，不知道他这题考的啥，不过正常宽字节注入是可以的 payload:?id&#x3D;0%df%27union%20select%201,group_concat(table_name),3%20from%20information_schema.tables%20where%20table_schema&#x3D;database()%23
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-13 22:52" pubdate>
+              2023-06-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/06/12/sqli-labs/sqli-labs-35/" target="_self">
           sqli-labs-35
         </a>
@@ -620,114 +728,6 @@
             <i class="iconfont icon-date"></i>
             <time datetime="2023-06-08 15:13" pubdate>
               2023-06-08
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/06/sqli-labs/sqli-labs-29/" target="_self">
-          sqli-labs-29
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/06/sqli-labs/sqli-labs-29/" target="_self">
-        <div>
-          sqli-labs第29题这题鬼扯得很，说是有waf，一试，这不啥也没过滤吗？你这waf有啥用？ 一看源码才知道，有三个页面，一个index.php，啥也没过滤 login.php才有waf，还有个hacked.php就是显示的拦截页面 这一关的知识点：http参数污染，简称hpp 原理：浏览器和服务器交互的时候，浏览器一般会在get&#x2F;post请求中带上键值对形式的参数，一般同一个名称的
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-06 22:47" pubdate>
-              2023-06-06
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/06/sqli-labs/sqli-labs-28/" target="_self">
-          sqli-labs-28
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/06/sqli-labs/sqli-labs-28/" target="_self">
-        <div>
-          sqli-labs第28题第28题试了半天，先是单引号报错，俩单引号正常，判断闭合符号为单引号，后面发现不对，看了源码才知道闭合符号是‘） 第二，过滤绕了半天都绕不过，我看着源码绕都不行，结果我把sql语句cmd执行了下，是可以的，最后才发现是%a0不行， 大小写可以绕过，直接按照26a题的步骤做就行了
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-06 13:55" pubdate>
-              2023-06-06
             </time>
           </div>
         
