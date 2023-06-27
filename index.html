@@ -224,6 +224,60 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/06/27/xss-labs/ans/" target="_self">
+          xss-labs题解
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/27/xss-labs/ans/" target="_self">
+        <div>
+          1-8题基本都是基础，按照基本的标签法，事件法，伪协议法注入就行，最多就是进行了过滤 比如，对on过滤，变成o_n，这样就用a标签的href属性，或者直接过滤掉了on，双写即可。 9题用编码绕过即可，比如直接用伪协议，javascript:alert(1),将i字母换成字符实体即可 10题就是反射型xss，及后台没有对用户的输入进行严格的检测和过滤， 我们直接看前端的源代码，发现有三个隐藏的inp
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-27 22:47" pubdate>
+              2023-06-27
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/xss-labs/" class="category-chain-item">xss-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/06/24/%E9%9A%8F%E7%AC%94/2023_6_24/" target="_self">
           2023_6_24随笔
         </a>
@@ -266,39 +320,6 @@
 </span>
 
           </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/24/xss/" target="_self">
-          
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/24/xss/" target="_self">
-        <div>
-          alert(1)
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-24 10:48" pubdate>
-              2023-06-24
-            </time>
-          </div>
-        
         
         
       </div>
