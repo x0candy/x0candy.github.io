@@ -24,7 +24,7 @@
 <meta property="og:description" content="1-8题基本都是基础，按照基本的标签法，事件法，伪协议法注入就行，最多就是进行了过滤 比如，对on过滤，变成o_n，这样就用a标签的href属性，或者直接过滤掉了on，双写即可。 9题用编码绕过即可，比如直接用伪协议，javascript:alert(1),将i字母换成字符实体即可 10题就是反射型xss，及后台没有对用户的输入进行严格的检测和过滤， 我们直接看前端的源代码，发现有三个隐藏的inp">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-27T14:47:02.714Z">
-<meta property="article:modified_time" content="2023-06-27T14:56:02.769Z">
+<meta property="article:modified_time" content="2023-06-27T15:31:24.689Z">
 <meta property="article:author" content="x0candy">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          293 字
+          437 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          3 分钟
+          4 分钟
         
       </span>
     
@@ -273,13 +273,18 @@
             
               <div class="markdown-body">
                 
-                <p>1-8题基本都是基础，按照基本的标签法，事件法，伪协议法注入就行，最多就是进行了过滤</p>
+                <h1 id="1-8题"><a href="#1-8题" class="headerlink" title="1-8题"></a>1-8题</h1><p>基本都是基础，按照基本的标签法，事件法，伪协议法注入就行，最多就是进行了过滤</p>
 <p>比如，对on过滤，变成o_n，这样就用a标签的href属性，或者直接过滤掉了on，双写即可。</p>
-<p>9题用编码绕过即可，比如直接用伪协议，javascript:alert(1),将i字母换成字符实体即可</p>
-<p>10题就是反射型xss，及后台没有对用户的输入进行严格的检测和过滤，</p>
+<h1 id="9题"><a href="#9题" class="headerlink" title="9题"></a>9题</h1><p>用编码绕过即可，比如直接用伪协议，javascript:alert(1),将i字母换成字符实体即可</p>
+<h1 id="10题"><a href="#10题" class="headerlink" title="10题"></a>10题</h1><p>就是反射型xss，及后台没有对用户的输入进行严格的检测和过滤，</p>
 <p>我们直接看前端的源代码，发现有三个隐藏的input框，我们传输这些参数，看哪一个参数会被返回到前端，</p>
 <p>测试了之后发现，只有sort参数能影响前端，然后我们构造payload，闭合标签，采用事件法onclick&#x3D;“alert(1)</p>
 <p>过关</p>
+<h1 id="11题"><a href="#11题" class="headerlink" title="11题"></a>11题</h1><p>t_sort进行了处理，双引号无法闭合了，但是多了个ref参数，开始还以为直接get传就行了，</p>
+<p>结果不行，无法对前端造成影响</p>
+<p>看了源码才知道是referer，抓包，增加referer字段</p>
+<p>referer:1” type&#x3D;”text” onclick&#x3D;”alert(1)</p>
+<p>完成</p>
 
                 
               </div>
