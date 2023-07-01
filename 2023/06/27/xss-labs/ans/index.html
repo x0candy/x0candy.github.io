@@ -24,7 +24,7 @@
 <meta property="og:description" content="1-8题基本都是基础，按照基本的标签法，事件法，伪协议法注入就行，最多就是进行了过滤 比如，对on过滤，变成o_n，这样就用a标签的href属性，或者直接过滤掉了on，双写即可。 9题用编码绕过即可，比如直接用伪协议，javascript:alert(1),将i字母换成字符实体即可 10题就是反射型xss，及后台没有对用户的输入进行严格的检测和过滤， 我们直接看前端的源代码，发现有三个隐藏的inp">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-27T14:47:02.714Z">
-<meta property="article:modified_time" content="2023-06-27T15:32:46.199Z">
+<meta property="article:modified_time" content="2023-07-01T12:19:41.004Z">
 <meta property="article:author" content="x0candy">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          437 字
+          1k 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          4 分钟
+          9 分钟
         
       </span>
     
@@ -285,6 +285,21 @@
 <p>看了源码才知道是referer，抓包，增加referer字段</p>
 <p>referer:1” type&#x3D;”text” onclick&#x3D;”alert(1)</p>
 <p>完成</p>
+<h1 id="12题"><a href="#12题" class="headerlink" title="12题"></a>12题</h1><p>ua反射xss，和11题一样的步骤，没啥好说的</p>
+<h1 id="13题"><a href="#13题" class="headerlink" title="13题"></a>13题</h1><p>cookie反射xss，和11题一样的步骤，没啥说的</p>
+<h1 id="14题"><a href="#14题" class="headerlink" title="14题"></a>14题</h1><p>exif的xss，进入14关，有一个图片上传的功能点，上传之后会回显图片的exif信息，找个工具修改一下图片的exif信息，构造xss代码，上传图片，然后后台解析恶意xss并返回到前台，上传成功后就可以触发该图片xss</p>
+<h1 id="15题"><a href="#15题" class="headerlink" title="15题"></a>15题</h1><p>angular的ng-include跟php的include类似，看url，src&#x3D;1.gif，我们只需要在src中包含一个存在xss的url然后触发它即可</p>
+<p>payload：src&#x3D;“level1.php?name&#x3D;&lt; a href&#x3D;”javascript:alert(1)”&gt;11</a>”</p>
+<h1 id="16题"><a href="#16题" class="headerlink" title="16题"></a>16题</h1><p>16题主要考绕过过滤，</p>
+<p>先script标签，过滤了，</p>
+<p>然后试了a标签，发现过滤了斜杠</p>
+<p>接下来就试一试不需要闭合的标签，比如img</p>
+<p>试了img，发现可行，只是空格变成了字符实体，可以用回车代替，回车的url编码是%0a</p>
+<h1 id="17题"><a href="#17题" class="headerlink" title="17题"></a>17题</h1><p>看url，两个参数，arg01，arg02分别传值a，b，体现在embed标签里面的src</p>
+<p>直接在第二个参数后面注册事件，这个注册的事件会注册到embed标签上</p>
+<p>直接干就行了</p>
+<h1 id="18题"><a href="#18题" class="headerlink" title="18题"></a>18题</h1><p>和17题类似，直接干</p>
+<h1 id="19，20题"><a href="#19，20题" class="headerlink" title="19，20题"></a>19，20题</h1><p>涉及到flash的反编译，这玩意都过时了，暂时先不研究</p>
 
                 
               </div>
