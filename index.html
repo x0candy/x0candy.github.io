@@ -224,6 +224,114 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/07/02/buuctf/ZJCTF%E4%B8%8D%E8%BF%87%E5%A6%82%E6%AD%A4/" target="_self">
+          zjctf不过如此
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/07/02/buuctf/ZJCTF%E4%B8%8D%E8%BF%87%E5%A6%82%E6%AD%A4/" target="_self">
+        <div>
+          zjctf不过如此1.打开靶场一看，有源码，两个参数text和file，text是用函数file_get_contents打开的，所以要使用伪协议data进行封装 第一个参数就解决了 ?text&#x3D;data:&#x2F;&#x2F;text&#x2F;plain;base64,SSBoYXZlIGEgZHJlYW0&#x3D; 然后看第二个参数，file有过滤，使用preg_match函数
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-07-02 21:59" pubdate>
+              2023-07-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/buuctf%E9%A2%98%E8%A7%A3/" class="category-chain-item">buuctf题解</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/07/02/buuctf/had%20a%20bad%20day/" target="_self">
+          had a bad day?
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/07/02/buuctf/had%20a%20bad%20day/" target="_self">
+        <div>
+          had a bad day？考点：php伪协议嵌套 1.首先我是试了sql注入的，有category参数，试了各种，报错是有的，但是都不是sql报错 所以sql注入应该是不存在了 2.利用php伪协议读取本地文件，一般默认页面是index.php payload:php:&#x2F;&#x2F;filter&#x2F;read&#x3D;convert.base64-encode&#x2F;res
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-07-02 13:56" pubdate>
+              2023-07-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/buuctf%E9%A2%98%E8%A7%A3/" class="category-chain-item">buuctf题解</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/06/27/xss-labs/ans/" target="_self">
           xss-labs题解
         </a>
@@ -620,114 +728,6 @@
             <i class="iconfont icon-date"></i>
             <time datetime="2023-06-15 10:51" pubdate>
               2023-06-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/14/sqli-labs/sqli-labs-39/" target="_self">
-          sqli-labs-39
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/14/sqli-labs/sqli-labs-39/" target="_self">
-        <div>
-          sqli-labs第39题先and 1&#x3D;2，测试出是数字型注入，使用堆叠注入， 构造payload:?id&#x3D;1;insert into users value(‘98’,’adb’,’111111’)%23
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-14 14:25" pubdate>
-              2023-06-14
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/14/sqli-labs/sqli-labs-38/" target="_self">
-          sqli-labs-38
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/14/sqli-labs/sqli-labs-38/" target="_self">
-        <div>
-          sqli-labs第38题这题正常联合注入就可以解了，但是很明显考的不是联合注入， 这关考的是堆叠注入，新的知识 堆叠注入原理简介： 1.在sql数据库中，多个语句用；号分开，堆叠注入就是利用的这个特性，在第二个语句中构造自己要执行的语句 2.联合注入和堆叠注入的区别在于，联合注入有局限性，只能是查询语句，而堆叠注入可以是任何语句，甚至是删除数据库，数据表。 3.堆叠注入的局限性，web系统中代码
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-14 13:57" pubdate>
-              2023-06-14
             </time>
           </div>
         

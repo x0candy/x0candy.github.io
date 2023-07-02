@@ -224,6 +224,114 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/06/09/sqli-labs/sqli-labs-28a/" target="_self">
+          sqli-labs-28a
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/09/sqli-labs/sqli-labs-28a/" target="_self">
+        <div>
+          sqli-labs第28a题这题感觉是28题的简化版本，看源码只过滤了’&#x2F;union\s+select&#x2F;i’ 那这还有什么说的？，直接28题的payload改都不改拿来用就行
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-09 10:35" pubdate>
+              2023-06-09
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/08/sqli-labs/sqli-labs-26a/" target="_self">
+          sqli-labs-26a
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/08/sqli-labs/sqli-labs-26a/" target="_self">
+        <div>
+          sqli-labs第26a题这题忘了做了，这两天重装了下系统，一直在配环境，人都配麻了 而且，发现了一些问题，26题没重装系统之前用%a0可以绕过，重装了之后就不行了 一直没搞懂怎么回事，网上各种说法都有。 后面再研究一下 这一题和26题是一样的，只不过改成了盲注 由于%a0我绕过不了，ps：可能是由于我是window系统（虽然我在kali里面也试过，不行） 采用（）绕过 构造payload： &
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-08 15:13" pubdate>
+              2023-06-08
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/06/06/sqli-labs/sqli-labs-29/" target="_self">
           sqli-labs-29
         </a>
@@ -619,114 +727,6 @@
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
             <time datetime="2023-06-03 20:16" pubdate>
-              2023-06-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/03/sqli-labs/sqli-labs-23/" target="_self">
-          sqli-labs-23
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/03/sqli-labs/sqli-labs-23/" target="_self">
-        <div>
-          sqli-labs第23题老样子，?id&#x3D;1’ 测试报错，然后注的时候发现过滤了注释符，导致sql语句不能闭合， 还好之前了解过一些waf的绕过，过滤了注释符，我直接再整个单引号，凑成对儿就行了， mysql里面不管单引号里有没有内容只要单引号是成对的，就没啥问题 然后直接构造payload:?id&#x3D;1’ union select 1,2,3’ 最简单的注入，直接干
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-03 15:29" pubdate>
-              2023-06-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/03/sqli-labs/sqli-labs-22/" target="_self">
-          sqli-labs-22
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/03/sqli-labs/sqli-labs-22/" target="_self">
-        <div>
-          sqli-labs第22题看题目还是cookie注入，bp拦截看数据包，和21题一样的进行了base64编码， 加单引号无屌用，双引号试一试，果然，只是换了闭合符号。 照着21题做就行，闭合符号换成双引号。
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-03 11:20" pubdate>
               2023-06-03
             </time>
           </div>

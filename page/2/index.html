@@ -224,6 +224,114 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/06/14/sqli-labs/sqli-labs-39/" target="_self">
+          sqli-labs-39
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/14/sqli-labs/sqli-labs-39/" target="_self">
+        <div>
+          sqli-labs第39题先and 1&#x3D;2，测试出是数字型注入，使用堆叠注入， 构造payload:?id&#x3D;1;insert into users value(‘98’,’adb’,’111111’)%23
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-14 14:25" pubdate>
+              2023-06-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/14/sqli-labs/sqli-labs-38/" target="_self">
+          sqli-labs-38
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/14/sqli-labs/sqli-labs-38/" target="_self">
+        <div>
+          sqli-labs第38题这题正常联合注入就可以解了，但是很明显考的不是联合注入， 这关考的是堆叠注入，新的知识 堆叠注入原理简介： 1.在sql数据库中，多个语句用；号分开，堆叠注入就是利用的这个特性，在第二个语句中构造自己要执行的语句 2.联合注入和堆叠注入的区别在于，联合注入有局限性，只能是查询语句，而堆叠注入可以是任何语句，甚至是删除数据库，数据表。 3.堆叠注入的局限性，web系统中代码
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-14 13:57" pubdate>
+              2023-06-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/06/14/sqli-labs/sqli-labs-37/" target="_self">
           sqli-labs-37
         </a>
@@ -620,114 +728,6 @@
             <i class="iconfont icon-date"></i>
             <time datetime="2023-06-11 19:20" pubdate>
               2023-06-11
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/09/sqli-labs/sqli-labs-28a/" target="_self">
-          sqli-labs-28a
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/09/sqli-labs/sqli-labs-28a/" target="_self">
-        <div>
-          sqli-labs第28a题这题感觉是28题的简化版本，看源码只过滤了’&#x2F;union\s+select&#x2F;i’ 那这还有什么说的？，直接28题的payload改都不改拿来用就行
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-09 10:35" pubdate>
-              2023-06-09
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/08/sqli-labs/sqli-labs-26a/" target="_self">
-          sqli-labs-26a
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/08/sqli-labs/sqli-labs-26a/" target="_self">
-        <div>
-          sqli-labs第26a题这题忘了做了，这两天重装了下系统，一直在配环境，人都配麻了 而且，发现了一些问题，26题没重装系统之前用%a0可以绕过，重装了之后就不行了 一直没搞懂怎么回事，网上各种说法都有。 后面再研究一下 这一题和26题是一样的，只不过改成了盲注 由于%a0我绕过不了，ps：可能是由于我是window系统（虽然我在kali里面也试过，不行） 采用（）绕过 构造payload： &
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-08 15:13" pubdate>
-              2023-06-08
             </time>
           </div>
         
