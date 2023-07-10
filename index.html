@@ -224,6 +224,147 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/07/05/buuctf/n1book/%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/" target="_self">
+          任意文件读取
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/07/05/buuctf/n1book/%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/" target="_self">
+        <div>
+          任意文件读取1，2题都很简单，基本上就是普通的文件读取，没有任何花哨的地方，最多就是有个目录穿越 3题有点难，3题涉及到了ssti模板注入 任意文件读取3首先是正常操作，到最后看到url是name&#x3D;xxx 试一试改成flag，提示没有权限，应该是有flag文件的 然后..&#x2F;..&#x2F;..&#x2F;etc&#x2F;passwd，发现成功执行，读取到了该文件，是存在任意文
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-07-05 21:00" pubdate>
+              2023-07-05
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/buuctf%E8%AF%BB%E5%8F%96/" class="category-chain-item">buuctf读取</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/07/05/buuctf/n1book/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" target="_self">
+          
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/07/05/buuctf/n1book/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" target="_self">
+        <div>
+          
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-07-05 20:59" pubdate>
+              2023-07-05
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/07/03/buuctf/%E7%A6%81%E6%AD%A2%E5%A5%97%E5%A8%83/" target="_self">
+          禁止套娃
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/07/03/buuctf/%E7%A6%81%E6%AD%A2%E5%A5%97%E5%A8%83/" target="_self">
+        <div>
+          禁止套娃打开一看，就一句话， 看源码没啥发现， 这种一般就是扫目录，扫端口了应该 dirsearch扫一波目录，发现有&#x2F;.git，应该是git源码泄露了 直接githack，找到源码后，审计一波 下面就是无参数rce了 无参数rce的核心代码 123if(&#x27;;&#x27; === preg_replace(&#x27;/[^\W]+\((?R)?\)/&#x27;, &#x27
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-07-03 13:51" pubdate>
+              2023-07-03
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/buuctf%E9%A2%98%E8%A7%A3/" class="category-chain-item">buuctf题解</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/07/02/buuctf/ZJCTF%E4%B8%8D%E8%BF%87%E5%A6%82%E6%AD%A4/" target="_self">
           zjctf不过如此
         </a>
@@ -565,168 +706,6 @@
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
             <time datetime="2023-06-15 11:45" pubdate>
-              2023-06-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/15/sqli-labs/sqli-labs-42/" target="_self">
-          sqli-labs-42
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/15/sqli-labs/sqli-labs-42/" target="_self">
-        <div>
-          sqli-labs第42题堆叠注入+报错注入 先用报错注入获取库名，表名，字段名 再用堆叠注入插入账号数据 post类型的注入 payload：login_user&#x3D;admin&amp;login_password&#x3D;1’;insert into users value(‘80’,’qq’,’123456’)%23&amp;mysubmit&#x3D;Login
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-15 10:59" pubdate>
-              2023-06-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/15/sqli-labs/sqli-labs-41/" target="_self">
-          sqli-labs-41
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/15/sqli-labs/sqli-labs-41/" target="_self">
-        <div>
-          sqli-labs第41题和40题同类型，只不过40题是字符型注入，本题是数字型注入 payload：**?id&#x3D;1;insert%20into%20users%20value(%2789%27,%27qwe%27,%27111111%27)%23**
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-15 10:55" pubdate>
-              2023-06-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/15/sqli-labs/sqli-labs-40/" target="_self">
-          sqli-labs-40
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/15/sqli-labs/sqli-labs-40/" target="_self">
-        <div>
-          sqli-labs第40题堆叠注入+盲注，没什么难点，注意一下闭合符号就行。看了源码才知道闭合符号是‘） 步骤：先union 查库名，表名，字段名。知道后直接insert堆叠注入账号数据即可
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-15 10:51" pubdate>
               2023-06-15
             </time>
           </div>
