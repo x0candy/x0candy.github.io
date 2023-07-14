@@ -224,6 +224,114 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/07/14/buuctf/n1book/SSRF/" target="_self">
+          SSRF
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/07/14/buuctf/n1book/SSRF/" target="_self">
+        <div>
+          SSRFssrf名服务器请求伪造 一般表现形式就是http://xxx.com?url=http://xxx.com，参数后面接一个地址 攻击方式： 内网探测，dos攻击（请求大文件，一直保持keep-alive-always），跳板，伪协议读取文件， 利用redis未授权访问，HTTP CRLF注入实现getshell 常用伪协议： 1234561.file:///  --本地文件传输协议，主要
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-07-14 10:51" pubdate>
+              2023-07-14
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/buuctf%E9%A2%98%E8%A7%A3/" class="category-chain-item">buuctf题解</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/07/13/buuctf/n1book/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" target="_self">
+          文件上传
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/07/13/buuctf/n1book/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" target="_self">
+        <div>
+          文件上传本题为文件上传类型的题，是一个复合题型，目录穿越+文件上传 创建一个文件，使用zip编辑器（010editor）编辑它的信息即可 目录穿越是为了绕过随机目录和upload 使用010editor修改压缩包的defilename属性，修改为&#x2F;..&#x2F;..&#x2F;111.php.xxx即可 两个目录穿越，越过随机目录和upload，我们上传的是压缩包，走压缩包的if，解析
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-07-13 11:21" pubdate>
+              2023-07-13
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/buuctf%E9%A2%98%E8%A7%A3/" class="category-chain-item">buuctf题解</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/07/05/buuctf/n1book/%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/" target="_self">
           任意文件读取
         </a>
@@ -256,7 +364,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/buuctf%E8%AF%BB%E5%8F%96/" class="category-chain-item">buuctf读取</a>
+  <a href="/categories/buuctf%E9%A2%98%E8%A7%A3/" class="category-chain-item">buuctf题解</a>
   
   
 
@@ -629,119 +737,11 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/15/sqli-labs/sqli-labs-44/" target="_self">
-          sqli-labs-44
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/15/sqli-labs/sqli-labs-44/" target="_self">
-        <div>
-          sqli-labs第44题字符型，堆叠注入+盲注 我是直接bp拦截包，然后 payload：login_user&#x3D;admin&amp;login_password&#x3D;1’ or 1&#x3D;1%23&amp;mysubmit&#x3D;Login 发现成功登录，存在sql注入 然后堆叠注入即可
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-15 18:00" pubdate>
-              2023-06-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/06/15/sqli-labs/sqli-labs-43/" target="_self">
-          sqli-labs-43
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/15/sqli-labs/sqli-labs-43/" target="_self">
-        <div>
-          sqli-labs第43题和42一样的，闭合符号换成‘) payload:login_user&#x3D;admin&amp;login_password&#x3D;1’);insert into user value(‘88’,’ww’,’111111’)%23&amp;mysubmit&#x3D;Login
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-06-15 11:45" pubdate>
-              2023-06-15
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/#board">6</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/#board">7</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 

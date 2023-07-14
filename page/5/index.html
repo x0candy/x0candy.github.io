@@ -224,6 +224,114 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2023/06/02/sqli-labs/sqli-labs-19/" target="_self">
+          sqli-labs-19
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/02/sqli-labs/sqli-labs-19/" target="_self">
+        <div>
+          sqli-labs第19题19题和18题类似，只不过是从user-agent换成了referer 按照18题的步骤做就行。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-02 17:48" pubdate>
+              2023-06-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2023/06/02/sqli-labs/sqli-labs-18/" target="_self">
+          sqli-labs-18
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/06/02/sqli-labs/sqli-labs-18/" target="_self">
+        <div>
+          sqli-labs第18题这题是看了题解的，开始试了一会儿，都不行，看了源码， 发现账号密码都做了检查，应该是没法注入了 后面看到一条insert的sql语句，这应该就是破局点 后面响应头各种加单引号，没用。 看了题解才知道，要账号密码正确才能执行insert语句，源码看得还是不够仔细 源码里面响应头就获取了user-agent，而ip的获取使用了remote_addr，它可以直接获取tcp协议数
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-06-02 12:01" pubdate>
+              2023-06-02
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2023/06/01/sqli-labs/sqli-labs-17/" target="_self">
           sqli-labs-17
         </a>
@@ -650,119 +758,11 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/24/sqli-labs/sqli-labs-9/" target="_self">
-          sqli-labs-9
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/24/sqli-labs/sqli-labs-9/" target="_self">
-        <div>
-          sqli-labs第9题开始试了半天，发现只有一个返回页面，you are in………… 看了题目名字才知道，这是延时注入 延时注入主要是利用**if(exp1,exp2,exp3)，和sleep(n)**函数 if的exp1如果为真则返回exp2，为假就返回exp3 构造payload测试注入点：**?id&#x3D;1’ and sleep(5)–+** 发现有明显延迟，存在延时注入 猜库名长
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-24 13:48" pubdate>
-              2023-05-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2023/05/22/sqli-labs/sqli-labs-8/" target="_self">
-          sqli-labs-8
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/05/22/sqli-labs/sqli-labs-8/" target="_self">
-        <div>
-          sqli-labs第8题直接盲注。 1’ and ascii(substr(database(),1,1))&gt;70 详情查看第五题题解
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-05-22 17:34" pubdate>
-              2023-05-22
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/sqli-labs/" class="category-chain-item">sqli-labs</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/4/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#board">6</a><a class="extend next" rel="next" href="/page/6/#board"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/page/4/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#board">6</a><a class="page-number" href="/page/7/#board">7</a><a class="extend next" rel="next" href="/page/6/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
